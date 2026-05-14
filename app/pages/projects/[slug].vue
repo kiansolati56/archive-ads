@@ -1,19 +1,33 @@
 <script setup>
-const { projectData } = useProjectsData()
+const route = useRoute()
 
-const template_type = 'reels'
+const { projectData } = useProjectsData()
 
 const templateComponents = {
     slide: defineAsyncComponent(() => import('~/components/templates/SlideTemplate.vue')),
     video: defineAsyncComponent(() => import('~/components/templates/VideoTemplate.vue')),
     post: defineAsyncComponent(() => import('~/components/templates/PostTemplate.vue')),
-    slide_with_preview: defineAsyncComponent(() => import('~/components/templates/SlideWithPreviewTemplate.vue')),
+    with_preview: defineAsyncComponent(() => import('~/components/templates/SlideWithPreviewTemplate.vue')),
     reels: defineAsyncComponent(() => import('~/components/templates/ReelsTemplate.vue'))
 }
 
-const currentTemplate = computed(() => templateComponents[template_type] || null)
+const template_type = computed(() => {
+    const path = route.path.toLowerCase()
 
-const showHeader = computed(() => ['slide', 'video', 'reels'].includes(template_type))
+    return Object.keys(templateComponents).find(type => {
+        const normalizedType = type.replaceAll('_', '-')
+
+        return path.includes(normalizedType)
+    }) || 'reels'
+})
+
+const currentTemplate = computed(() => {
+    return templateComponents[template_type.value] || null
+})
+
+const showHeader = computed(() => {
+    return ['slide', 'video', 'reels'].includes(template_type.value)
+})
 </script>
 
 <template>

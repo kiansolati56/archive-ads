@@ -1,3 +1,3 @@
 <script setup>
-navigateTo('/projects/sample-page', { replace: true })
+navigateTo('/projects/reels', { replace: true })
 </script>
