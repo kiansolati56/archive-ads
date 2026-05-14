@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/kamand/Woff2/Kamand-Light.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/kamand/Woff2/Kamand-Regular.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/kamand/Woff2/Kamand-Medium.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: bold;
+    src: url('/fonts/kamand/Woff2/Kamand-Bold.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/kamand/Woff2/Kamand-ExtraBold.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: 900;
+    src: url('/fonts/kamand/Woff2/Kamand-Black.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-Black.woff') format('woff');
+}
+
+@font-face {
+    font-family: Kamand;
+    font-style: normal;
+    font-weight: 1000;
+    src: url('/fonts/kamand/Woff2/Kamand-ExtraBlack.woff2') format('woff2'),
+        url('/fonts/kamand/Woff/Kamand-ExtraBlack.woff') format('woff');
+}
+
+/* Roboto Fonts */
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/roboto/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@theme {
+
+    --font-kamand: "Kamand", "sans-serif";
+    --font-roboto: "Roboto", "sans-serif";
+
+    --color-thwhite: #ffffff;
+    --color-thblack: #000000;
+
+    --color-thprimary: #551515;
+
+    --color-thred-100: #C61E28;
+
+    --color-thgray-50: #B2B2B2;
+    --color-thgray-100: #FBFBFB;
+    --color-thgray-150: #E1E1E1;
+
+    --color-thbluegray: #293340;
+
+}
+
+@utility container {
+    padding-inline: 2rem;
+    margin-inline: auto;
+
+    @variant sm {
+        padding-inline: 1.5rem;
+    }
+
+    @variant lg {
+        padding-inline: 1.5rem;
+    }
+
+    @variant xl {
+        padding-inline: 1.5rem;
+    }
+
+    @variant 2xl {
+        padding-inline: 4rem;
+    }
+}
+
+.center {
+    @apply flex justify-center items-center;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+button,
+a,
+nuxt-link {
+    scale: 100% !important;
+    transition: all 0.16s ease;
+    cursor: pointer;
+}
+
+button:active,
+a:active,
+nuxt-link:active {
+    scale: 96% !important;
+}
